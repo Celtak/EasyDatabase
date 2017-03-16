@@ -25,5 +25,9 @@ Instanciez un nouvel objet avec la class easyDatabase en n'oubliant pas d'indiqu
 <?php $newData = new easyDatabase('localhost:8889', 'monsql', 'root', 'root'); ?>
 ```
 
+### Utilisation
+
+
+
 
 
