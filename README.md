@@ -99,6 +99,18 @@ Instanciez un nouvel objet avec la class easyDatabase. N'oubliez pas d'indiquer 
 <?php $newData = new easyDatabase('localhost:8889', 'monsql', 'root', 'root'); ?>
 ```
 
+### Liste des méthode
+
+| Méthode   | Syntaxe   |
+| --------- | --------- |
+| SelectAll | selectAll ( table , select , where , order , limit )   |
+| Insert    | insert ( table , values )|
+| Update    | update ( table , set , where )|
+| Delete    | delete ( table , where )|
+| setBdd    | setBdd ( bdd )|
+
+La méthode setBdd permet de changer les paramètres de connection de la base de donnée. Cette méthode est appélée automatiquement lors de la création de l'objet.
+
 ### Utilisation
 
 #### Exemple BDD
@@ -144,6 +156,39 @@ Nom de la table: Contact.
   // $select[0][0] retourne 'Bonnel'
 ?>
 ```
+
+#### Insertion données
+
+```php
+<?php 
+  $newData->insert('Contact', ['Shin', 'Jean', '32']); 
+  // Ajoute le nom Shin, le prénom Jean et l'âge 32 dans la base de donnée
+  // Attention syntaxe strict 
+  // Il faut dans le tableau du deuxième paramètre autant de données qu'il y a de champs exitant dans la base
+?>
+```
+Pour les entrées vides, ajoutez '' .
+
+#### Mise à jour donnée(s)
+
+```php
+<?php 
+  $newData->update('Contact', 'nom="Light", prenom="Fabrice"', 'nom="Merant"'); 
+  // Change le nom Merant par Light et prenom Anthony par Fabrice
+  // L'âge ne change pas
+?>
+```
+
+#### Suppression données (toute la ligne)
+
+```php
+<?php 
+  $newData->delete('Contact', 'nom="Bonnel')
+  // Suprime toutes les données de Bonnel: nom, prenom, age
+  // Supprime toute la ligne
+?>
+```
+Attention méthode dangereuse et irréversible.
 
 
 
