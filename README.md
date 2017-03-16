@@ -7,14 +7,13 @@ A class in php that allows to easily manage a database MySQL
 
 ### Prérequis
 
-Télécharger et déplacer le fichier easyDatabase.class.php dans votre répertoire de travail.
+Téléchargez et déplacez le fichier easyDatabase.class.php dans votre répertoire de travail.
 
-Ensuite ensuite insérez-le:
+Insérez-le:
 ```php
 <?php require "easyDatabase.class.php"; ?>
 ```
-
-S'il est enregistré dans un fichier insérer-le de cette façon:
+N'oubliez pas d'indiquez le dossier si c'est nécéssaire:
 ```php
 <?php require "dossier/easyDatabase.class.php"; ?>
 ```
