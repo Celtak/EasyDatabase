@@ -2,9 +2,7 @@
 
 class easyDatabase
 {
-
     private $bdd;
-
 
     /**
      * connectionBDD constructor.
@@ -81,7 +79,6 @@ class easyDatabase
             $constQuery = $constQuery . ' LIMIT ' .  $limit;
         }
 
-
         $reponse = $this->bdd->query($constQuery);
 
         $donneeTable = [];
@@ -96,17 +93,4 @@ class easyDatabase
         $reponse->closeCursor();
 
     }
-
-
 }
-
-
-$test = new easyDatabase('localhost:8889', 'monsql');
-
-$toute = $test->selectAll('Animal');
-
-echo $toute[0][1];
-
-
-
-
