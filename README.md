@@ -19,9 +19,7 @@ Insérez-le.
 
 #### Création objet
 
-Instanciez un nouvel objet avec la class easyDatabase.
-
-Indiquez l'url, le nom de la base de donnée, l'indetifiant et le mot de passe.
+Instanciez un nouvel objet avec la class easyDatabase en n'oubliant pas d'indiquer l'url, le nom de la base de donnée, l'indentifiant et le mot de passe.
 
 ```php
 <?php $newData = new easyDatabase('localhost:8889', 'monsql', 'root', 'root'); ?>
