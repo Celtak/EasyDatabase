@@ -8,12 +8,14 @@ class easyDatabase
      * connectionBDD constructor.
      * @param $host
      * @param $nomBase
+     * @param $iden
+     * @param $pass
      * Connection à la base donnée. Insérer url host et le nom de la base de donnée
      */
-    public function __construct($host, $nomBase)
+    public function __construct($host, $nomBase, $iden, $pass)
     {
         try {
-            $this->setBdd(new PDO('mysql:host=' . $host . ';dbname=' . $nomBase . ';charset=utf8', 'root', 'root'));
+            $this->setBdd(new PDO('mysql:host=' . $host . ';dbname=' . $nomBase . ';charset=utf8', $iden , $pass));
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
