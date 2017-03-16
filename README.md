@@ -30,6 +30,18 @@ Instantiate a new object with the easyDatabase class, remembering to include the
 <?php $newData = new easyDatabase('localhost:8889', 'monsql', 'root', 'root'); ?>
 ```
 
+### Methods list
+
+| Method    | Syntax    |
+| --------- | --------- |
+| SelectAll | selectAll ( table , select , where , order , limit )   |
+| Insert    | insert ( table , values )|
+| Update    | update ( table , set , where )|
+| Delete    | delete ( table , where )|
+| setBdd    | setBdd ( bdd )|
+
+The setBdd method is used to change the connection parameters of the database. This method is automatically called when the object is created.
+
 ### Usage
 
 #### Example BDD
@@ -76,6 +88,41 @@ Table name: Contact.
 ?>
 ```
 
+#### Inserts values
+
+```php
+<?php 
+  $newData->insert('Contact', ['Shin', 'Jean', '32']); 
+  // Add name Shin, first name Jean and age 32 in database
+  // Strict syntax
+  // In the array's second parameter, there must be as much data as there are fields exiting in the database
+?>
+```
+
+For empty values, add '' .
+
+#### Update value(s)
+
+```php
+<?php 
+  $newData->update('Contact', 'nom="Light", prenom="Fabrice"', 'nom="Merant"'); 
+  // Change name Merant by Light et first name Anthony by Fabrice
+  // Age does not change
+?>
+```
+
+#### Delete values (all line)
+
+```php
+<?php 
+  $newData->delete('Contact', 'nom="Bonnel')
+  // Delete all Bonnel values: name, first name, age
+  // Delete the line
+?>
+```
+Warning dangerous and irreversible method.
+
+
 
 ## Français
 
@@ -101,7 +148,7 @@ Instanciez un nouvel objet avec la class easyDatabase. N'oubliez pas d'indiquer 
 
 ### Liste des méthode
 
-| Méthode   | Syntaxe   |
+| Méthodes   | Syntaxe   |
 | --------- | --------- |
 | SelectAll | selectAll ( table , select , where , order , limit )   |
 | Insert    | insert ( table , values )|
@@ -164,7 +211,7 @@ Nom de la table: Contact.
   $newData->insert('Contact', ['Shin', 'Jean', '32']); 
   // Ajoute le nom Shin, le prénom Jean et l'âge 32 dans la base de donnée
   // Attention syntaxe strict 
-  // Il faut dans le tableau du deuxième paramètre autant de données qu'il y a de champs exitant dans la base
+  // Il faut dans le tableau du deuxième paramètre autant de données qu'il y a de champs existant dans la base
 ?>
 ```
 Pour les entrées vides, ajoutez '' .
