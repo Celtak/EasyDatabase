@@ -7,7 +7,6 @@ A class in php that allows to easily manage a database MySQL
 ## English
 
 A French version below.
-Sorry if my English is bad :-( .
 
 ### Getting Started
 
